@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <title>WEATHER APP</title>
+    </head>
+    <body>
+        <form onsubmit="getWeather(); return false" id="weatherForm">
+            <div id="home">
+                <img src="./images/home.png" alt="weather">
+                <h1 id="headLine">
+                    Check The
+                    <span>Weather</span>
+                    <br>
+                    Of your City
+                </h1>
+                <input
+                    type="text"
+                    name="weather"
+                    id="weatherCheck"
+                    required
+                >
+                <input type="submit" value="Check" id="check">
+            </div>
+        </form>
+        <div id="weatherUpdate">
+            <!-- <button onclick="refreshPage()">Refresh</button> -->
+            <div id="location">
+                <br>
+                <h4 id="city"></h4>
+                <h1 id="result"></h1>
+                <div id="temprature">
+                    <h5 id="imgDescription"></h5>
+                </div>
+            </div>
+            <div id="glass-bar">
+                <h2 id="humidity"></h2>
+                <h2 id="visibility"></h2>
+                <h2 id="windSpeed"></h2>
+            </div>
+            <div id="time">
+                <h2 id="sunriseTime"></h2>
+                <h2 id="sunsetTime"></h2>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="./app.mjs"></script>
+    </body>
+</html>

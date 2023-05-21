@@ -1,0 +1,124 @@
+body {
+    max-width: 1100px;
+    min-width: 375px;
+    background-color: rgba(91, 47, 194, 0.692);
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: center;
+
+
+}
+
+#home {
+    margin-top: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.74);
+    box-shadow: 1px 1px 5px rgb(34, 33, 33);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    /* margin: auto; */
+    color: white;
+    text-shadow: 2px 2px 2px rgb(58, 48, 48);
+    background: linear-gradient(rgba(25, 167, 233, 0.918), rgb(241, 150, 64));
+}
+
+
+span {
+    color: yellow;
+}
+
+
+#weatherCheck {
+    font-size: 1.5rem;
+    border: 2px solid rgb(31, 177, 43);
+    border-radius: 0.5rem;
+    margin: 1rem;
+}
+
+#weatherCheck::-moz-focus-inner {
+    border: none;
+}
+
+#check {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid rgb(30, 211, 181);
+    border-radius: 1rem;
+    background-color: rgb(111, 206, 209);
+    color: white;
+    width: 200px;
+    margin: auto;
+    text-shadow: 1px 1px 1px rgb(58, 48, 48);
+    text-decoration: none;
+
+}
+
+#weatherIcon {
+    width: 5rem;
+}
+
+/* weather result */
+
+#weatherUpdate {
+    width: max-content;
+    color: white;
+    border: 2px solid aqua;
+    padding: 1.5rem;
+    background-image: url(./images/sun.jpg);
+    border-radius: 3rem;
+
+
+}
+
+#result {
+    text-shadow: 2px 2px 2px rgb(15, 13, 13);
+    font-size: 5rem;
+}
+
+#temprature {
+    display: flex;
+}
+
+#glass-bar {
+    display: flex;
+    margin: 0.5rem;
+    justify-content: space-evenly;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.19);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.1px);
+    -webkit-backdrop-filter: blur(5.1px);
+    border: 3px solid rgb(255, 255, 255);
+}
+
+#humidity,
+#visibility,
+#windSpeed {
+    margin-right: 1.5rem;
+    padding: 0.4rem;
+    margin-left: 0.5rem;
+    font-weight: 400;
+    text-shadow: 2px 2px 2px rgb(58, 48, 48);
+}
+
+#time {
+    display: flex;
+    margin: 0.5rem;
+    justify-content: space-evenly;
+    background: rgba(255, 255, 255, 0.19);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.1px);
+    -webkit-backdrop-filter: blur(5.1px);
+    border: 3px solid rgb(255, 255, 255);
+}
+
+#sunriseTime,
+#sunsetTime {
+    margin: 1rem;
+    font-weight: 400;
+    text-shadow: 2px 2px 2px rgb(58, 48, 48);
+}
