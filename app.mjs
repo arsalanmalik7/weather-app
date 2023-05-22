@@ -1,8 +1,6 @@
 window.getWeather = function () {
     let cityName = document.querySelector("#weatherCheck").value;
 
-
-
     let API_KEY = 'c5df4cd50a4d946aa1b1763e385036e4';
     axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`)
         .then(function (response) {
@@ -31,10 +29,10 @@ window.getWeather = function () {
             // imgDescription
             let imgDescription = document.querySelector("#imgDescription");
             let description = response.data.weather[0].description;
-
             imgDescription.innerHTML = description;
+            console.log(description);
 
-
+            // temprature & atmosphere
             document.querySelector("#result").innerHTML = ` ${response.data.main.temp} °`
 
             document.querySelector("#humidity").innerHTML = `${response.data.main.humidity} %<br /> humidity`
@@ -45,21 +43,31 @@ window.getWeather = function () {
 
             document.querySelector("#windSpeed").innerHTML = `${response.data.wind.speed} m/s <br /> wind speed`
 
-
+            // sunrise & sunset time
             let sunriseTimestamp = response.data.sys.sunrise;
             let sunsetTimestamp = response.data.sys.sunset;
 
             sunriseTime = new Date(sunriseTimestamp * 1000);
             sunsetTime = new Date(sunsetTimestamp * 1000);
 
-
-
             document.querySelector("#sunriseTime").innerHTML = `<label for="sunrisetime">sunrise time</label><br /> ${sunriseTime.toLocaleTimeString()}`;
             document.querySelector("#sunsetTime").innerHTML = `<label for="sunsettime">sunset time</label><br /> ${sunsetTime.toLocaleTimeString()}`;
 
+            let result = document.querySelector("#weatherUpdate");
 
-
-
+            if (description === 'clear sky') {
+                result.style.backgroundImage = 'url(./images/sun.jpg)';
+            } else if (description === 'few clouds') {
+                result.style.backgroundImage = 'url(./images/cloud.jpg)';
+            } else if (description === 'scattered clouds') {
+                result.style.backgroundImage = 'url(./images/scattered.jpg)';
+            } else if (description === 'broken clouds') {
+                result.style.backgroundImage = 'url(./images/broken.jpg)';
+            } else if (description === 'shower rain' || description === 'rain') {
+                result.style.backgroundImage = 'url(./images/rain.jpg)';
+            } else {
+                result.style.backgroundImage = 'url(./images/sun.jpg)';
+            }
 
         })
 
@@ -72,12 +80,11 @@ window.getWeather = function () {
 
 }
 
-
+// setting and removing the div
 
 let button = document.querySelector("#check");
 let result = document.querySelector("#weatherUpdate");
 result = result.style.display = 'none';
-
 document.querySelector("#weatherForm").addEventListener('submit', function (event) {
     event.preventDefault();
 
@@ -89,6 +96,7 @@ document.querySelector("#weatherForm").addEventListener('submit', function (even
 
 });
 
+// reload the page
 function refreshPage() {
     location.reload();
 }
